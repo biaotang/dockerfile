@@ -28,9 +28,9 @@ RUN apk update && apk add --no-cache ca-certificates bash openssh tzdata rsync &
 
 RUN cat /locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8
 
-ENV LANG="${lang:-zh_CN}.UTF-8" \
-    LANGUAGE="${lang:-zh_CN}.UTF-8" \
-    LC_ALL="${lang:-zh_CN}.UTF-8"
+ENV LANG="zh_CN.UTF-8" \
+    LANGUAGE="zh_CN.UTF-8" \
+    LC_ALL="zh_CN.UTF-8"
 
 EXPOSE 22
 
