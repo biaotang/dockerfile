@@ -6,6 +6,7 @@ set -e
 if [[ "${DEBUG}" == "true" ]]; then
     set -x
 fi
+
 user=${USER:-root}
 password=${PASSWORD:-alpine@}
 root_password=${ROOT_PASSWORD}
