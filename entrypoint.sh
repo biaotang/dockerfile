@@ -8,10 +8,16 @@ if [[ "${DEBUG}" == "true" ]]; then
 fi
 USER=${USER:-root}
 PASSWORD=${PASSWORD:-alpine@}
+ROOT_PASSWORD=${ROOT_PASSWORD}
 
 if [[ "$USER" != "root" ]]; then
     adduser -u 1000 $USER -G root -D
+    echo "$USER:$PASSWORD" | chpasswd
 fi
 
-echo "$USER:$PASSWORD" | chpasswd
+if [ -n "$ROOT_PASSWORD" ]; then
+    echo "root:$ROOT_PASSWORD" | chpasswd
+else
+    echo "root:$PASSWORD" | chpasswd
+fi
 exec /usr/sbin/sshd -D -e "$@"
