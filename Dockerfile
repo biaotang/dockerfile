@@ -21,6 +21,7 @@ RUN apk update && apk add --no-cache ca-certificates bash openssh tzdata rsync &
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-bin-2.30-r0.apk && \
     wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-i18n-2.30-r0.apk && \
     apk add glibc-2.30-r0.apk glibc-bin-2.30-r0.apk glibc-i18n-2.30-r0.apk && \
+    chmod 755 /opt/entrypoint.sh && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
 
