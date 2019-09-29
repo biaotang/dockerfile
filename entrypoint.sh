@@ -11,8 +11,7 @@ PASSWORD=${PASSWORD:-alpine@}
 ROOT_PASSWORD=${ROOT_PASSWORD}
 
 if [[ "$USER" != "root" ]]; then
-   id $user >& /dev/null
-   if [ $? -ne 0 ]; then
+   if ! id -u $USER > /dev/null 2>&1; then
       adduser -u 1000 $USER -G root -D
       echo "$USER:$PASSWORD" | chpasswd
    fi
