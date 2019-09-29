@@ -31,8 +31,7 @@ RUN cat /locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.
 
 ENV LANG="${LANG:-zh_CN}.UTF-8" \
     LANGUAGE="${LANG:-zh_CN}.UTF-8" \
-    LC_CTYPE="${LANG:-zh_CN}.UTF-8" \
-    LC_ALL=="${LANG:-zh_CN}.UTF-8"
+    LC_ALL="${LANG:-zh_CN}.UTF-8"
 
 EXPOSE 22
 
