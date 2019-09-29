@@ -10,7 +10,7 @@ USER=${USER:-root}
 PASSWORD=${PASSWORD:-alpine@}
 
 if [[ "$USER" != "root" ]]; then
-    adduser -u 1000 $USER -G root
+    adduser -u 1000 $USER -G root -D
 fi
 
 echo "$USER:$PASSWORD" | chpasswd
