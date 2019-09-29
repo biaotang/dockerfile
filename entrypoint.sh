@@ -7,6 +7,13 @@ if [[ "${DEBUG}" == "true" ]]; then
     set -x
 fi
 
+lang="${LANG:-zh_CN.UTF-8}"
+
+echo "LANG=$lang" >> /etc/profile
+echo "LANGUAGE=$lang" >> /etc/profile
+echo "LC_ALL=$lang" >> /etc/profile
+source /etc/profile
+
 user=${USER:-root}
 password=${PASSWORD:-alpine@}
 root_password=${ROOT_PASSWORD}
