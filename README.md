@@ -9,5 +9,5 @@
 
 ## 使用示例
 ```
-docker run -d -p 22:22 -e PASSWORD=<your password> --name=tomcat dockerbilltang/tomcat
+docker run -d -p 22:22 -e PASSWORD=<your password> --name=sshd dockerbilltang/sshd
 ```
