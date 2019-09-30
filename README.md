@@ -6,3 +6,8 @@
 ## 环境参数配置
 - `USER` 设置SSH用户名，默认root用户
 - `PASSWORD` 设置SSH用户密码，默认"alpine@"
+
+## 使用示例
+```
+docker run -d -p 22:22 -e PASSWORD=<your password> --name=tomcat dockerbilltang/tomcat
+```
